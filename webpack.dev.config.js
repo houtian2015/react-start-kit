@@ -1,7 +1,10 @@
 const path = require('path')
 
 module.exports = {
-    entry: './src/index.js',
+    entry: [
+        'react-hot-loader/patch', // react 热替换
+        './src/index.js'
+    ],
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist')
@@ -14,5 +17,13 @@ module.exports = {
             use: ['babel-loader?cacheDirectory=true'],
             include: path.join(__dirname, 'src')
         }]
+    },
+
+    // 本地开发环境静态服务器
+    devServer: {
+        port: 8080,
+        contentBase: path.join(__dirname, 'dist'),
+        historyApiFallback: true,
+        host: '0.0.0.0'
     }
 }
