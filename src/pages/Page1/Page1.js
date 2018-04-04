@@ -3,7 +3,7 @@ import React, {Component} from 'react'
 export default class Page1 extends Component {
     render() {
         return (
-            <div>
+            <div className="page-box">
                 this is page1~!
             </div>
         )
