@@ -1,4 +1,4 @@
-import Mock from 'mockjs';
+let Mock = require('mockjs');
 
 let Random = Mock.Random;
 
